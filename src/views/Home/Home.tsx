@@ -54,6 +54,28 @@ const Cards = styled(BaseLayout)`
     }
   }
 `
+const Card = styled(BaseLayout)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  // & > div {
+  //   grid-column: span 6;
+  //   width: 100%;
+  // }
+
+  // ${({ theme }) => theme.mediaQueries.sm} {
+  //   & > div {
+  //     grid-column: span 8;
+  //   }
+  // }
+
+  // ${({ theme }) => theme.mediaQueries.lg} {
+  //   & > div {
+  //     grid-column: span 12;
+  //   }
+  // }
+`
 
 const CTACards = styled(BaseLayout)`
   align-items: start;
@@ -71,7 +93,7 @@ const CTACards = styled(BaseLayout)`
 
   ${({ theme }) => theme.mediaQueries.lg} {
     & > div {
-      grid-column: span 4;
+      grid-column: span 6;
     }
   }
 `
@@ -88,10 +110,12 @@ const Home: React.FC = () => {
         <Text>{TranslateString(578, 'The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
       </Hero>
       <div style={{justifyContent: "center", alignItems: "center"}}>
-        <Cards>
+        {/* <div style={{backgroundColor: "red", justifyContent: "center", alignItems: "center",}}> */}
+        <Card>
           <FarmStakingCard />
           {/* <LotteryCard /> */}
-        </Cards>
+        </Card>
+        {/* </div> */}
         <CTACards>
           <EarnAPRCard />
           <EarnAssetCard />
